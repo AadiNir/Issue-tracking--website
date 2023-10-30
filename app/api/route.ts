@@ -6,6 +6,7 @@ const validator = z.object({
     description:z.string().min(1)
 });
 export async function POST(request: NextRequest){
+    //add await in req
     const body = await request.json();
     const isvalid=validator.safeParse(body);
     if(!isvalid){
